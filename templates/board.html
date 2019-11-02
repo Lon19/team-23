@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/timeline.css') }}">
+        <style>
+          body {
+            font-family: 'Lato', sans-serif;
+            letter-spacing: 0.04em;
+        }
+
+        #navbar {
+              overflow: hidden;
+              background-color: white;
+            }
+
+            #navbar a {
+              float: left;
+              display: inline-block;
+              color: #2a3038;
+              text-align: center;
+              padding: 14px 16px;
+              text-decoration: none;
+              font-size: 17px;
+              font-family: 'Lato', sans-serif;
+              line-height: 44px;
+            }
+
+            #navbar a:hover {
+              background-color: #2a3038;
+              color: white;
+            }
+
+            #navbar a.navbar-brand {
+              background-color: white;
+            }
+            #title{
+                margin-top: 5px;
+                margin-bottom: 5px;
+                padding: 2px;
+            }
+            #addButton{
+                margin-top: 5px;
+                margin-bottom: 5px;
+                padding: 2px;
+            }
+
+            ul .year {
+              color: white;
+              font-size: 16px;
+            }
+
+            ul .year::before {
+              background: #ffd402;
+            }
+        </style>
+    </head>
+    <body style="background-color: #00dcff59;   background: linear-gradient(0deg,rgba(85, 89, 96, 0.7),rgba(85, 89, 96, 0.7)), url('https://i.imgur.com/R04WgRK.jpg') center center no-repeat; background-size:cover;">
+        <div id="navbar">
+            <a href="javascript:void(0)" class="navbar-brand">
+                <img src="https://images.squarespace-cdn.com/content/5a1abda8aeb6251ef0a76deb/1513522087144-NKFZK28Y8DXRJ8Q7ITI5/logo_header.png?content-type=image%2Fpng" height="41" alt="" class="d-inline-block align-middle mr-2">
+            </a>
+            <a href="javascript:void(0)">Register</a>
+            <a href="/myboards">My Boards</a>
+          </div>
+    <div class="container">
+        <div class= "row">
+            <div class = "col-md-9 float-left" id = "title">
+                <span class="badge badge-pill badge-dark">My Boards (3/3)</span>
+            </div>
+            <div class = "col-md-3 float-right" id="addButton">
+                <span class="badge badge-pill badge-dark">Add Board</span>
+            </div>
+        </div>
+        <div class="accordion" id="accordionExample">
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                  <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Cambridge University
+                  </button>
+                </h2>
+              </div>
+          
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body">
+                    Requirements: 
+                    <hr>
+                    <br><br>
+                    <ul class="timeline">
+                        <li>
+                            <span class="year">15 Oct</span>
+                            <ul class="content">
+                            <li>UCAS Application</li></ul></li>
+                        <li>
+                            <span class="year">??</span>
+                            <ul class="content">
+                            <li>Written assessment</li></ul></li>
+                        <li>
+                            <span class="year">??</span>
+                            <ul class="content">
+                            <li>Interview</li></ul></li>
+                        <li>
+                            <span class="year">Jan</span>
+                            <ul class="content">
+                            <li>Results</li></ul></li>
+                        <li><span class="year new">...</span></li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    University of Oxford
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                    Requirements: 
+                    <hr>
+                    <br><br>
+                    <ul class="timeline">
+                        <li>
+                            <span class="year">15 Oct</span>
+                            <ul class="content">
+                            <li>UCAS Application</li></ul></li>
+                        <li>
+                            <span class="year">??</span>
+                            <ul class="content">
+                            <li>Written assessment</li></ul></li>
+                        <li>
+                            <span class="year">??</span>
+                            <ul class="content">
+                            <li>Interview</li></ul></li>
+                        <li>
+                            <span class="year">Jan</span>
+                            <ul class="content">
+                            <li>Results</li></ul></li>
+                        <li><span class="year new">...</span></li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Imperial College London
+                  </button>
+                </h2>
+              </div>
+              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                    Requirements: 
+                    <hr>
+                  <br><br>
+                    <ul class="timeline">
+                        <li>
+                            <span class="year">15 Jan</span>
+                            <ul class="content">
+                            <li>UCAS Application</li></ul></li>
+                        <li>
+                            <span class="year">??</span>
+                            <ul class="content">
+                            <li>Written assessment</li></ul></li>
+                        <li>
+                            <span class="year">17 Feb</span>
+                            <ul class="content">
+                            <li>Interview</li></ul></li>
+                        <li>
+                            <span class="year">6 Mar</span>
+                            <ul class="content">
+                            <li>Results</li></ul></li>
+                        <li><span class="year new">...</span></li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <button type="button" class="btn btn-primary btn-lg text-center">Find a mentor</button>
+    </div>
+    </body>
+</html>
