@@ -1,0 +1,90 @@
+import pickle
+import requests
+from bs4 import BeautifulSoup
+import csv
+
+
+class Basket:
+
+    def __init__(self):
+        self.mylist = self.reload()
+        if len(self.mylist) >= 3:
+            self.removeboard(self.mylist[0])
+
+
+    def save(self):
+        with open(r'persistence.pkl', 'wb') as f:
+            pickle.dump(self.mylist, f, pickle.HIGHEST_PROTOCOL)
+
+    def addboard(self, board):
+        self.mylist.append(board)
+        self.save()
+
+    def removeboard(self, board):
+        self.mylist.remove(board)
+        self.save()
+
+    def reload(self):
+        with open(r'persistence.pkl', 'rb') as f:
+            return pickle.load(f)
+
+
+
+class Board:
+
+    def __init__(self, university, kwargs):
+        self._university = university
+        self.keyDates = kwargs
+
+
+
+
+class Pagepuller:
+
+    def __init__(self):
+        pass
+
+    def requirements(self, url):
+        URL = url
+        r = requests.get(URL)
+        print("The entry requirements for " + input_course + " are:")
+        soup = BeautifulSoup(r.content, 'html.parser')
+
+        temp = [td.find_next('p') for td in soup.find(id="entry-requirements")]
+        requirement = temp[0].get_text()
+        a_level, ib = requirement.split("IB")
+        print (a_level)
+        ib = requirement.replace(a_level, '')
+        print(ib)
+
+    def deadline(self):
+        URL = "https://www.ucas.com/events/2020-entry-deadline-universities-oxford-and-cambridge-and-most-courses-medicine-veterinary-348816"
+        r = requests.get(URL)
+        soup = BeautifulSoup(r.content, 'html5lib')
+        row = soup.find('meta', attrs={'name': 'expires'})
+        return row['content']
+
+    def createBoard(self, university):
+        board = Board(university, {'deadline': self.deadline()})
+        return board
+
+
+
+
+
+page = Pagepuller()
+basket = Basket()
+basket.addboard(page.createBoard("Cambridge"))
+print(basket.mylist)
+
+
+
+
+course_hashmap = {"Computer Science": "https://www.undergraduate.study.cam.ac.uk/courses/computer-science",
+                  "Chemical Engineering": "https://www.undergraduate.study.cam.ac.uk/courses/chemical-engineering",
+                  "Mathematics": "https://www.undergraduate.study.cam.ac.uk/courses/mathematics"
+                  }
+input_course = "Mathematics"
+page.requirements(course_hashmap.get(input_course))
+
+
