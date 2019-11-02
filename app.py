@@ -14,7 +14,7 @@ def hello():
 def login():
     return "LOGIN"
     
-@app.route("/test")
+@app.route("/country")
 def test():
     return render_template('choice.html')
     
@@ -22,11 +22,7 @@ def test():
 def courses_list():
     return render_template('courses_list.html')
 
-@app.route("/time")
-def time():
-    return render_template('timeline.html')
-
-@app.route("/board")
+@app.route("/myboards")
 def board():
     return render_template('board.html')
 
