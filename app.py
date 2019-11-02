@@ -21,5 +21,11 @@ def test():
 @app.route("/courses_list")
 def courses_list():
     return render_template('courses_list.html')
+
+@app.route("/time")
+def time():
+    return render_template('timeline.html')
+    
+
 if __name__ == "__main__":
     app.run()
