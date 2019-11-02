@@ -29,7 +29,11 @@ def time():
 @app.route("/board")
 def board():
     return render_template('board.html')
-    
+
+@app.route("/courses")
+def courses():
+    from .scraping import get_requirements
+    return render_template('board.html') 
 
 if __name__ == "__main__":
     app.run()
