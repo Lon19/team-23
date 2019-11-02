@@ -29,12 +29,13 @@ class Basket:
         with open(r'persistence.pkl', 'rb') as f:
             return pickle.load(f)
 
-
-
 class Board:
 
+    university = ""
+    keyDates = {}
+
     def __init__(self, university, kwargs):
-        self._university = university
+        self.university = university
         self.keyDates = kwargs
 
 
@@ -100,8 +101,14 @@ def test_page():
     page = Pagepuller()
     basket = Basket()
     basket.addboard(page.createBoard("Cambridge"))
-    print(basket.mylist)
+    for x in basket.mylist:
+        print(x)
+        print(x.university)
+        print(x.keyDates)
+
+
 
 
 
 test_page()
+get_requirements()
