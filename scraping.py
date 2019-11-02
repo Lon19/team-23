@@ -1,6 +1,16 @@
 import requests
 from bs4 import BeautifulSoup
 
+def parser(a_level,ib):
+    message = """<html>
+    <head></head>
+    <p>The Requirements for Cambridge University</p>
+    <p>"{0}"</p>
+    <p>"{1}"</p>
+    </html>
+    """.format(a_level, ib)
+    return message
+
 def requirements(url):
     
     URL = url
@@ -14,10 +24,12 @@ def requirements(url):
     print (a_level)
     ib = requirement.replace(a_level,'')
     print(ib)
+    return parser(a_level=a_level,ib=ib)
 
-course_hashmap = { "Computer Science" : "https://www.undergraduate.study.cam.ac.uk/courses/computer-science", 
-"Chemical Engineering" : "https://www.undergraduate.study.cam.ac.uk/courses/chemical-engineering",
-"Mathematics" : "https://www.undergraduate.study.cam.ac.uk/courses/mathematics"
-}
-input_course = "Mathematics"
-requirements(course_hashmap.get(input_course))
+def get_requirements():
+    course_hashmap = { "Computer Science" : "https://www.undergraduate.study.cam.ac.uk/courses/computer-science", 
+    "Chemical Engineering" : "https://www.undergraduate.study.cam.ac.uk/courses/chemical-engineering",
+    "Mathematics" : "https://www.undergraduate.study.cam.ac.uk/courses/mathematics"
+    }
+    input_course = "Mathematics"
+    return requirements(course_hashmap.get(input_course))
