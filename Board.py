@@ -89,3 +89,15 @@ input_course = "Mathematics"
 page.requirements(course_hashmap.get(input_course))
 
 
+<<<<<<< Updated upstream
+=======
+def test_page():
+    page = Pagepuller()
+    basket = Basket()
+    basket.addboard(page.createBoard("Cambridge"))
+    print(basket.mylist)
+
+
+
+test_page()
+>>>>>>> Stashed changes
