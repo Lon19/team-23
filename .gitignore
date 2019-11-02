@@ -3,3 +3,4 @@ wfastcgi.py
 .DS_Store
 static/.DS_Store
 __pycache__/
+venv/
