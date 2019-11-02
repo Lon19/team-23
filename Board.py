@@ -8,9 +8,10 @@ class Basket:
 
     def __init__(self):
         self.mylist = self.reload()
-        if len(self.mylist) >= 3:
-            self.removeboard(self.mylist[0])
 
+    def tradeBoard(self, currentboard, newboard):
+         self.removeboard(currentboard)
+         self.addboard(newboard)
 
     def save(self):
         with open(r'persistence.pkl', 'wb') as f:
@@ -28,12 +29,13 @@ class Basket:
         with open(r'persistence.pkl', 'rb') as f:
             return pickle.load(f)
 
-
-
 class Board:
 
+    university = ""
+    keyDates = {}
+
     def __init__(self, university, kwargs):
-        self._university = university
+        self.university = university
         self.keyDates = kwargs
 
 
@@ -94,5 +96,17 @@ def get_requirements():
     input_course = "Mathematics"
     return requirements(course_hashmap.get(input_course))
 
+
+def test_page():
+    page = Pagepuller()
+    basket = Basket()
+    basket.addboard(page.createBoard("Cambridge"))
+    for x in basket.mylist:
+        print(x)
+        print(x.university)
+        print(x.keyDates)
+
+
+test_page()
 
 get_requirements()
