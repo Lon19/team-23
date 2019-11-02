@@ -18,6 +18,8 @@ def login():
 def test():
     return render_template('choice.html')
     
-    
+@app.route("/courses_list")
+def courses_list():
+    return render_template('courses_list.html')
 if __name__ == "__main__":
     app.run()
