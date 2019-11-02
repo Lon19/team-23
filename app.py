@@ -17,7 +17,10 @@ def login():
 @app.route("/test")
 def test():
     return render_template('choice.html')
-    
+
+@app.route("/time")
+def time():
+    return render_template('timeline.html')
     
 if __name__ == "__main__":
     app.run()
