@@ -8,8 +8,6 @@ class Basket:
 
     def __init__(self):
         self.mylist = self.reload()
-        if len(self.mylist) >= 3:
-            self.removeboard(self.mylist[0])
 
 
     def save(self):
