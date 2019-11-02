@@ -9,6 +9,12 @@
         <link rel="stylesheet" href="{{ url_for('static', filename='css/timeline.css') }}">
         <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans&display=swap" rel="stylesheet">
         <style>
+
+        body {
+            font-family: 'Lato', sans-serif;
+            letter-spacing: 0.04em;
+        }
+
             #navbar {
               overflow: hidden;
               background-color: white;
@@ -16,13 +22,14 @@
 
             #navbar a {
               float: left;
-              display: block;
+              display: inline-block;
               color: #2a3038;
               text-align: center;
               padding: 14px 16px;
               text-decoration: none;
               font-size: 17px;
               font-family: 'Lato', sans-serif;
+              line-height: 44px;
             }
 
             #navbar a:hover {
@@ -30,13 +37,17 @@
               color: white;
             }
 
-            #navbar a.active {
-              background-color: #FDA929;
-              color: #2a3038;
+            #navbar a.navbar-brand {
+              background-color: white;
             }
 
             .content {
               padding: 16px;
+            }
+
+            ul .year {
+              color: white;
+              font-size: 16px;
             }
 
             ul .year::before {
@@ -57,7 +68,9 @@
 	<body style="background-color: #00dcff59;   background: linear-gradient(0deg,rgba(85, 89, 96, 0.7),rgba(85, 89, 96, 0.7)), url('https://i.imgur.com/R04WgRK.jpg') center center no-repeat; background-size:cover;">
         
         <div id="navbar">
-          <a class="active" href="javascript:void(0)">Home</a>
+            <a href="javascript:void(0)" class="navbar-brand">
+                <img src="https://images.squarespace-cdn.com/content/5a1abda8aeb6251ef0a76deb/1513522087144-NKFZK28Y8DXRJ8Q7ITI5/logo_header.png?content-type=image%2Fpng" height="41" alt="" class="d-inline-block align-middle mr-2">
+            </a>
           <a href="javascript:void(0)">Register</a>
           <a href="javascript:void(0)">Basket</a>
         </div>

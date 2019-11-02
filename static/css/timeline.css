@@ -2,6 +2,7 @@ body, html {
   padding: 0;
   margin: 0;
   font-family: 'Lato', sans-serif;
+  letter-spacing: 0.04em;
 }
 
 .container {
@@ -31,7 +32,7 @@ ul.timeline > li:nth-of-type(odd) > .content {
   transform: translateY(calc(-100% - 24px));
 }
 ul .year {
-  color: #FDA929;
+  color: white;
   background: #3f444c;
   display: block;
   position: relative;
