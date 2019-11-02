@@ -12,7 +12,7 @@
     <style>
 
         :root {
-        --left-bg-color: rgba(42, 48, 56, 0.7);
+        --left-bg-color: rgba(140, 151, 165, 0.7);
         --right-bg-color: rgba(85, 89, 96, 0.7);
         --hover-width: 53%;
         --other-width: 47%;
@@ -20,7 +20,33 @@
         }
         body {
             font-family: 'Lato', sans-serif;
+            letter-spacing: 0.04em;
         }
+            #navbar {
+              overflow: hidden;
+              background-color: white;
+            }
+
+            #navbar a {
+              float: left;
+              display: block;
+              color: #2a3038;
+              text-align: center;
+              padding: 14px 16px;
+              text-decoration: none;
+              font-size: 17px;
+              font-family: 'Lato', sans-serif;
+            }
+
+            #navbar a:hover {
+              background-color: #2a3038;
+              color: white;
+            }
+
+            #navbar a.active {
+              background-color: #FDA929;
+              color: #2a3038;
+            }
         h1 {
             font-size: 4rem;
             color: white;
@@ -48,9 +74,16 @@
 	<body >
 
     <div class="container-split">
+
+        <div id="navbar">
+            <a class="active" href="javascript:void(0)">Home</a>
+            <a href="javascript:void(0)">Register</a>
+            <a href="javascript:void(0)">Basket</a>
+          </div>
+
       <div class="split left">
         <h1>United Kingdom</h1>
-        <button type="button" class="btn btn-primary">Select</button>
+        <button id="uk" type="button" class="btn btn-primary">Select</button>
       </div>
       <div class="split right">
         <h1>United States</h1>
@@ -59,6 +92,13 @@
     </div>
     
     <script>
+
+    document.getElementById("uk").onclick = function () {
+
+      location.href = "/courses_list"
+    }
+
+
         const left = document.querySelector(".left");
         const right = document.querySelector(".right");
         const container = document.querySelector(".container-split");
