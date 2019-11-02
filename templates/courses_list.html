@@ -1,0 +1,337 @@
+<!doctype html>
+
+<html lang="en">
+	<head>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <style>
+            #navbar {
+              overflow: hidden;
+              background-color: #333;
+            }
+
+            #navbar a {
+              float: left;
+              display: block;
+              color: #f2f2f2;
+              text-align: center;
+              padding: 14px 16px;
+              text-decoration: none;
+              font-size: 17px;
+            }
+
+            #navbar a:hover {
+              background-color: #ddd;
+              color: black;
+            }
+
+            #navbar a.active {
+              background-color: #4CAF50;
+              color: white;
+            }
+
+            .content {
+              padding: 16px;
+            }
+
+            .sticky {
+              position: fixed;
+              top: 0;
+              width: 100%;
+            }
+
+            .sticky + .content {
+              padding-top: 60px;
+            }
+        </style>
+	</head>
+	<body style="background-color: #00dcff59;   background: url('https://cdn.ianvisits.co.uk/blog/wp-content/uploads/2019/05/15154410/Untitled-1.jpg') center center no-repeat;">
+        
+        <div id="navbar">
+          <a class="active" href="javascript:void(0)">Home</a>
+          <a href="javascript:void(0)">Register</a>
+          <a href="javascript:void(0)">Basket</a>
+        </div>
+        
+        <div class="row"  style="padding-top: 3%;">
+
+        <div id="oxford-modal" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+					<h5 class="modal-title" > This is where the board goes</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+                    This is where you put all the bullshit about how great this uni is
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button id="save-questions-changes" type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-save"></i>Save</button>
+				</div>
+            </div>
+          </div>
+        </div>
+        
+        
+            <div class="card col-sm-3 offset-1">
+              <div class="card-body">
+                <h5 class="card-title">University of Oxford</h5>
+                <p class="card-text">Top 5 universities worldwide...</p>
+                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#oxford-modal">Go somewhere</a>
+              </div>
+            </div>
+            
+            
+                    <div id="soton-modal" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+					<h5 class="modal-title" > This is where the board goes</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+                    This is where you put all the bullshit about how great this uni is
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button id="save-questions-changes" type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-save"></i>Save</button>
+				</div>
+            </div>
+          </div>
+        </div>
+            
+            <div class="card col-sm-3 offset-1">
+              <div class="card-body">
+                <h5 class="card-title">University of Southampton</h5>
+                <p class="card-text">ECS is fantastic</p>
+                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#soton-modal">Go somewhere</a>
+              </div>
+            </div>
+            
+         <div id="leeds-modal" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+					<h5 class="modal-title" > This is where the board goes</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+                    This is where you put all the bullshit about how great this uni is
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button id="save-questions-changes" type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-save"></i>Save</button>
+				</div>
+            </div>
+          </div>
+        </div>
+            
+            <div class="card col-sm-3 offset-1">
+              <div class="card-body">
+                <h5 class="card-title">University of Leeds</h5>
+                <p class="card-text">Not amazing, but here just as an example</p>
+                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#leeds-modal">Go somewhere</a>
+              </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 3%;">
+
+        <div id="oxford-modal" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+					<h5 class="modal-title" > This is where the board goes</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+                    This is where you put all the bullshit about how great this uni is
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button id="save-questions-changes" type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-save"></i>Save</button>
+				</div>
+            </div>
+          </div>
+        </div>
+        
+        
+            <div class="card col-sm-3 offset-1">
+              <div class="card-body">
+                <h5 class="card-title">University of Oxford</h5>
+                <p class="card-text">Top 5 universities worldwide...</p>
+                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#oxford-modal">Go somewhere</a>
+              </div>
+            </div>
+            
+            
+                    <div id="soton-modal" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+					<h5 class="modal-title" > This is where the board goes</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+                    This is where you put all the bullshit about how great this uni is
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button id="save-questions-changes" type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-save"></i>Save</button>
+				</div>
+            </div>
+          </div>
+        </div>
+            
+            <div class="card col-sm-3 offset-1">
+              <div class="card-body">
+                <h5 class="card-title">University of Southampton</h5>
+                <p class="card-text">ECS is fantastic</p>
+                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#soton-modal">Go somewhere</a>
+              </div>
+            </div>
+            
+         <div id="leeds-modal" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+					<h5 class="modal-title" > This is where the board goes</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+                    This is where you put all the bullshit about how great this uni is
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button id="save-questions-changes" type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-save"></i>Save</button>
+				</div>
+            </div>
+          </div>
+        </div>
+            
+            <div class="card col-sm-3 offset-1">
+              <div class="card-body">
+                <h5 class="card-title">University of Leeds</h5>
+                <p class="card-text">Not amazing, but here just as an example</p>
+                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#leeds-modal">Go somewhere</a>
+              </div>
+            </div>
+        </div>
+        <div class="row" style="margin-top: 3%;">
+
+        <div id="oxford-modal" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+					<h5 class="modal-title" > This is where the board goes</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+                    This is where you put all the bullshit about how great this uni is
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button id="save-questions-changes" type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-save"></i>Save</button>
+				</div>
+            </div>
+          </div>
+        </div>
+        
+        
+            <div class="card col-sm-3 offset-1">
+              <div class="card-body">
+                <h5 class="card-title">University of Oxford</h5>
+                <p class="card-text">Top 5 universities worldwide...</p>
+                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#oxford-modal">Go somewhere</a>
+              </div>
+            </div>
+            
+            
+                    <div id="soton-modal" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+					<h5 class="modal-title" > This is where the board goes</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+                    This is where you put all the bullshit about how great this uni is
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button id="save-questions-changes" type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-save"></i>Save</button>
+				</div>
+            </div>
+          </div>
+        </div>
+            
+            <div class="card col-sm-3 offset-1">
+              <div class="card-body">
+                <h5 class="card-title">University of Southampton</h5>
+                <p class="card-text">ECS is fantastic</p>
+                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#soton-modal">Go somewhere</a>
+              </div>
+            </div>
+            
+         <div id="leeds-modal" class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+					<h5 class="modal-title" > This is where the board goes</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+                    This is where you put all the bullshit about how great this uni is
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button id="save-questions-changes" type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-save"></i>Save</button>
+				</div>
+            </div>
+          </div>
+        </div>
+            
+            <div class="card col-sm-3 offset-1">
+              <div class="card-body">
+                <h5 class="card-title">University of Leeds</h5>
+                <p class="card-text">Not amazing, but here just as an example</p>
+                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#leeds-modal">Go somewhere</a>
+              </div>
+            </div>
+        </div>
+        <script>
+        window.onscroll = function() {myFunction()};
+
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+
+        function myFunction() {
+          if (window.pageYOffset >= sticky) {
+            navbar.classList.add("sticky")
+          } else {
+            navbar.classList.remove("sticky");
+          }
+        }
+        </script>
+	</body>
+</html>

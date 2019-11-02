@@ -17,6 +17,10 @@ def login():
 @app.route("/test")
 def test():
     return render_template('choice.html')
+    
+@app.route("/courses_list")
+def courses_list():
+    return render_template('courses_list.html')
 
 @app.route("/time")
 def time():
@@ -26,5 +30,6 @@ def time():
 def board():
     return render_template('board.html')
     
+
 if __name__ == "__main__":
     app.run()
