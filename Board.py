@@ -107,8 +107,5 @@ def test_page():
         print(x.keyDates)
 
 
-
-
-
 test_page()
 get_requirements()
