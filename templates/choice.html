@@ -8,20 +8,103 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/split_screen.css') }}">
     </head>
+
+    <style>
+
+        :root {
+        --left-bg-color: rgba(85, 89, 96, 0.7);
+        --right-bg-color: rgba(85, 89, 96, 0.7);
+        --hover-width: 53%;
+        --other-width: 47%;
+        --speed: 1000ms;
+        }
+        body {
+            font-family: 'Lato', sans-serif;
+            letter-spacing: 0.04em;
+        }
+
+        #navbar {
+              overflow: hidden;
+              background-color: white;
+            }
+
+            #navbar a {
+              float: left;
+              display: inline-block;
+              color: #2a3038;
+              text-align: center;
+              padding: 14px 16px;
+              text-decoration: none;
+              font-size: 17px;
+              font-family: 'Lato', sans-serif;
+              line-height: 44px;
+            }
+
+            #navbar a:hover {
+              background-color: #2a3038;
+              color: white;
+            }
+
+            #navbar a.navbar-brand {
+              background-color: white;
+            }
+        h1 {
+            font-size: 4rem;
+            color: white;
+            position: absolute;
+            left: 50%;
+            top: 20%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+        }
+        .btn-primary {
+            display: block !important;
+            position: absolute !important;
+            left: 50% !important;
+            top: 40% !important;
+            height: 2.5rem !important;
+            width: 15rem !important;
+            text-align: center !important;
+            transform: translateX(-50%);
+        }
+        .split.left {
+          background: url('https://i.imgur.com/R04WgRK.jpg') center center no-repeat;
+        }
+        .split.right {
+          background: url('https://i.imgur.com/DaoJW8I.jpg') center center no-repeat;
+        }
+    </style>
+
 	<body >
 
     <div class="container-split">
+
+        <div id="navbar">
+            <a href="javascript:void(0)" class="navbar-brand">
+                <img src="https://images.squarespace-cdn.com/content/5a1abda8aeb6251ef0a76deb/1513522087144-NKFZK28Y8DXRJ8Q7ITI5/logo_header.png?content-type=image%2Fpng" height="41" alt="" class="d-inline-block align-middle mr-2">
+            </a>
+            <a href="javascript:void(0)">Register</a>
+            <a href="javascript:void(0)">Basket</a>
+          </div>
+
       <div class="split left">
-        <h1>UK</h1>
-        <a href="#" class="button">SELECT</a>
+        <h1>United Kingdom</h1>
+        <button id="uk" type="button" class="btn btn-primary">Select</button>
       </div>
       <div class="split right">
-        <h1>US</h1>
-        <a href="#" class="button">SELECT</a>
+        <h1>United States</h1>
+        <button type="button" class="btn btn-primary">Select</button>
       </div>
     </div>
     
     <script>
+
+    document.getElementById("uk").onclick = function () {
+
+      location.href = "/courses_list"
+    }
+
+
         const left = document.querySelector(".left");
         const right = document.querySelector(".right");
         const container = document.querySelector(".container-split");
