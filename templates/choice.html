@@ -10,8 +10,35 @@
     </head>
 
     <style>
+
+        :root {
+        --left-bg-color: rgba(42, 48, 56, 0.7);
+        --right-bg-color: rgba(85, 89, 96, 0.7);
+        --hover-width: 53%;
+        --other-width: 47%;
+        --speed: 1000ms;
+        }
         body {
             font-family: 'Lato', sans-serif;
+        }
+        h1 {
+            font-size: 4rem;
+            color: white;
+            position: absolute;
+            left: 50%;
+            top: 20%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+        }
+        .btn-primary {
+            display: block !important;
+            position: absolute !important;
+            left: 50% !important;
+            top: 40% !important;
+            height: 2.5rem !important;
+            width: 15rem !important;
+            text-align: center !important;
+            transform: translateX(-50%);
         }
         .split.left {
             background: url('https://i.imgur.com/R04WgRK.jpg') center center no-repeat;
@@ -22,12 +49,12 @@
 
     <div class="container-split">
       <div class="split left">
-        <h1>UK</h1>
-        <a href="#" class="button">SELECT</a>
+        <h1>United Kingdom</h1>
+        <button type="button" class="btn btn-primary">Select</button>
       </div>
       <div class="split right">
-        <h1>US</h1>
-        <a href="#" class="button">SELECT</a>
+        <h1>United States</h1>
+        <button type="button" class="btn btn-primary">Select</button>
       </div>
     </div>
     
