@@ -9,6 +9,9 @@ class Basket:
     def __init__(self):
         self.mylist = self.reload()
 
+    def tradeboard(self, newboard, currentboard):
+        self.removeboard(currentboard)
+        self.addboard(newboard)
 
     def save(self):
         with open(r'persistence.pkl', 'wb') as f:
