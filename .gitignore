@@ -2,4 +2,7 @@ web.config
 wfastcgi.py
 .DS_Store
 static/.DS_Store
-__pycache__/
+./__pycache__/*.pyc
+./_pycache__/app.cpython-38.pyc
+.\__pycache__\*.pyc
+.\_pycache__\app.cpython-38.pyc
